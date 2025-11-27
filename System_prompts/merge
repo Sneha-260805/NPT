@@ -1,0 +1,14 @@
+"""
+Merge two parallel directory trees of JSONL files.
+
+• For every file that exists under BOTH roots with the same relative path:
+      SOURCE_A/.../foo.jsonl   (unnormalised)
+      SOURCE_B/.../foo.jsonl   (normalised)
+  write
+      DEST/.../foo.jsonl
+  where each output line contains:
+      {"unnormalised": <text from A>, "normalised": <text from B>}
+
+• If one file has more lines than its twin, the shorter side is padded with "".
+• Folder structure is preserved; paths are created automatically.
+"""
