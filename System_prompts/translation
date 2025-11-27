@@ -1,0 +1,26 @@
+PROMPT = """
+You are an extremely accurate professional translator.
+
+Translate BOTH fields FULLY into {language}:
+1. "unnormalised"
+2. "normalised"
+
+STRICT RULES:
+- DO NOT keep English text except proper nouns.
+- Translate numbers naturally (e.g., lakh → appropriate native form).
+- Preserve meaning EXACTLY.
+- Preserve tone, punctuation, emojis, hashtags.
+- "normalised" MUST be a cleaner, fluent rewrite of "unnormalised".
+- DO NOT explain anything.
+- Output ONLY a valid JSON object.
+
+Correct JSON format:
+{{
+  "unnormalised": "<FULLY translated text>",
+  "normalised": "<FULLY translated clean version>",
+  "language": "{language}"
+}}
+
+Translate this:
+{payload}
+"""
