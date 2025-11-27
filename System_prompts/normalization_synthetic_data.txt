@@ -1,0 +1,168 @@
+Tokenized unpunctuated
+data I used for training
+Raw punctuated
+text data
+You are tasked with generating synthetic data to train a normalization model in the Indian context. The data must be in
+English, reflecting Indian English conventions, and contain unnormalized elements such as abbreviations, numerals,
+dates, times, and category-specific terms. The output should be natural, coherent, and contextually relevant,
+incorporating Indian names, places, institutions, cultural references, and everyday scenarios. The generated text will be
+tailored to a specific category, subcategory, and document type, as specified below.
+Input Parameters
+-Category: {category}
+(e.g., Medical, Legal, Numbers, Date & Time, Tech, Currency, Travel, Education, Finance, Identifiers, Units of
+Measurements, Titles, Addresses)
+- Subcategory: {subcategory}
+(e.g., for Medical: Diseases, Treatments, Hospitals; for Legal: Court Cases, Laws, Contracts)
+- Document Type: {document_type}
+(e.g., Twitter thread, Article, Comment, Quora post, Reddit post, Blog post, News snippet)
+- Target Length: {target_length}
+- Tone: {tone}
+(e.g., "formal", "informal", "conversational", "professional" )
+Core Instructions
+1. Objective:
+Generate a {document_type} focused on the topic of {subcategory} within the {category} category. The text must serve
+as unnormalized training data for a normalization model, meaning all elements (e.g., abbreviations, numbers, dates)
+should remain in their raw, unstandardized forms.
+2. Indian Context:
+- Use Indian English (e.g., "prepone" instead of "bring forward", "lakh" instead of "100,000").
+- Incorporate Indian proper nouns:
+- Names (e.g., "Priya Sharma", "Rakesh Kumar", "Aisha Khan").
+- Places (e.g., "Mumbai", "Delhi", "Kerala", "Guwahati").
+- Institutions (e.g., "AIIMS", "IIT Bombay", "State Bank of India").
+- Cultural references (e.g., "Diwali", "chai", "Bollywood", "saree").
+- Reflect Indian societal norms, professions, and daily life (e.g., "auto-rickshaw driver", "government clerk", "monsoon
+season").
+3. Unnormalized Data:
+- Include multiple instances of unnormalized elements specific to the {category} and {subcategory}.
+- Do not convert data into standardized forms (e.g., keep "Dr." instead of "Doctor", "15/08/2024" instead of "15th
+August 2024", "100" instead of "one hundred").
+- Ensure variety in the types and formats of unnormalized data (e.g., mix abbreviations, numerals, and shorthand
+notations).
+- Naturally integrate additional unnormalized elements from other categories where relevant (e.g., a Medical text
+might include dates or numbers alongside medical abbreviations).
+4. Tone and Style:
+Adapt the tone and style to the {document_type} and {tone} parameter:
+- Article: Formal or semi-formal, detailed, 3-5 paragraphs, structured with an introduction, body, and conclusion.
+- Comment: Brief, 1-2 sentences, conversational or opinionated, as if responding to a post or question.
+- Quora post: Conversational, informative, 2-3 paragraphs, answering an implied question.
+- Reddit post: Casual, engaging, 2-3 paragraphs, possibly with humor or personal anecdotes.
+- Blog post: Personal or professional, 5-6 paragraphs, narrative-driven.
+- News snippet: Objective, concise, 1-2 paragraphs, reporting a fact or event.
+Prioritize {tone} while aligning with the document type.
+System Prompt for Synthetic Generation for Normalization
+5. Length:
+- Aim for {target_length}:
+- Article: 3-5 paragraphs (300-500 words).
+- Comment: 1-2 sentences (20-50 words).
+- Quora/Reddit post: 2-3 paragraphs (150-300 words).
+- Blog post: 3-4 paragraphs (200-400 words).
+- News snippet: 1-2 paragraphs (100-200 words).
+- Adjust content density to include sufficient unnormalized data without overloading the text.
+6. Coherence and Realism:
+- Ensure the text reads naturally, as if written by a human in a real-world scenario.
+- Avoid repetitive phrasing or forced inclusion of unnormalized elements; integrate them seamlessly into the
+narrative.
+- Make the content standalone, requiring no external context unless the document type implies a response (e.g.,
+Comment).
+Category-Specific Guidance and Examples
+Below are detailed examples of unnormalized data for each category. Use these as inspiration to generate similar
+content based on the specified {subcategory}.
+- **Medical:**
+- Subcategories: Diseases, Treatments, Hospitals, Doctors, Procedures, Medications.
+- Examples:
+- "Dr. Priya Sharma at Apollo Hospital prescribed 2 tablets of Paracetamol 500mg for fever."
+- "The patient was diagnosed with TB and admitted to AIIMS Delhi on 10/03/2023."
+- "An MRI scan costs Rs. 5000 at Fortis Bangalore."
+- **Legal:**
+- Subcategories: Court Cases, Laws, Contracts, Legal Terms, Judgments.
+- Examples:
+- "In State of Karnataka vs. Anil Kumar, the Supreme Court upheld IPC Section 302 on 15/07/2022."
+- "Adv. Gupta filed a PIL in the Bombay High Court regarding the 2G scam."
+- "The lease agreement specifies a rent of Rs. 20,000 per month."
+- **Numbers:**
+- Subcategories: Statistics, Percentages, Quantities, Ratios.
+- Examples:
+- "India’s population reached 1.4 billion in the 2021 census, with a growth rate of 1.1%."
+- "The survey showed 75% of students prefer online classes."
+- "The recipe requires 250 grams of rice and 2 cups of water."
+- **Date & Time:**
+- Subcategories: Historical Dates, Future Dates, Event Schedules, Time Zones.
+- Examples:
+- "India gained independence on 15/08/1947 at 12:00 AM."
+- "The meeting is scheduled for 25/12/2024 at 3:30 PM IST."
+- "Diwali this year falls on 01/11/2023."
+- **Tech:**
+- Subcategories: Gadgets, Software, Internet Terms, Specifications.
+- Examples:
+- "The Realme GT 5G has a 6.43-inch AMOLED screen and 8GB RAM."
+- "Jio launched its 5G network in Mumbai on 10/10/2022."
+"TheapprequiresAndroid11orhigher"
+- The app requires Android 11 or higher.
+- **Currency:**
+- Subcategories: Indian Rupees, Foreign Currencies, Exchange Rates, Prices.
+- Examples:
+- "The new iPhone costs Rs. 79,900 in India."
+- "He exchanged $100 for ₹8300 at the airport."
+- "A cup of chai at the stall is Rs. 10."
+- **Travel:**
+- Subcategories: Trains, Flights, Road Trips, Tourist Spots, Distances.
+- Examples:
+- "The Shatabdi Express departs Delhi at 6:00 AM and reaches Jaipur by 10:30 AM."
+- "A flight from Mumbai to Goa costs Rs. 4500 on 15/09/2024."
+- "The distance from Chennai to Pondicherry is 150 km."
+- **Education:**
+- Subcategories: Schools, Universities, Degrees, Exams, Subjects.
+- Examples:
+- "Rohan scored 95% in his CBSE Class 12 exams at DPS Delhi."
+- "She completed her B.Tech from IIT Madras in 2022."
+- "The JEE Main is scheduled for 10/01/2025."
+- **Finance:**
+- Subcategories: Stocks, Banks, Investments, Loans, Markets.
+- Examples:
+- "The Sensex rose by 500 points to 62,000 on 05/06/2023."
+- "SBI offers a home loan at 8.5% interest per annum."
+- "Reliance shares are trading at Rs. 2800."
+- **Identifiers:**
+- Subcategories: Names, ID Numbers, Passports, Licenses.
+- Examples:
+- "Submit your Aadhaar number 4567-8901-2345 for KYC."
+- "Mr. Vikram Singh, passport no. J1234567, booked a flight."
+- "The voter ID EPIC123456 is valid till 31/12/2025."
+- **Units of Measurements:**
+- Subcategories: Length, Weight, Volume, Temperature, Area.
+- Examples:
+- "The plot measures 500 sq ft and costs Rs. 50 lakh."
+- "The temperature in Delhi reached 45°C on 10/06/2023."
+- "The tank holds 1000 liters of water."
+- **Titles:**
+- Subcategories: Academic Titles, Professional Titles, Honorifics, Government Roles.
+- Examples:
+- "Prof. Anil Gupta will address the seminar at 2 PM."
+- "Mrs. Lakshmi Iyer, CEO of TechIndia, launched the product."
+- "Dr. Sanjay Patel performed the surgery at 9:00 AM."
+- **Addresses:**
+- Subcategories: Residential, Commercial, Postal Codes, Landmarks.
+- Examples:
+- "The shop is at 45, MG Road, Pune, 411001."
+- "Send the parcel to Flat 3B, Sector 15, Noida, UP, 201301."
+- "The office is near Connaught Place, New Delhi, 110001."
+Additional Guidelines
+- Variety: Within the text, vary the format of unnormalized data (e.g., mix "15/08/2024" and "15th Aug 2024" for dates, or
+"Rs. 500" and "₹500" for currency).
+- Edge Cases: If the {subcategory} is uncommon or unclear, infer a plausible topic based on the {category} and
+generate relevant unnormalized data (e.g., for an obscure Medical subcategory, default to diseases or treatments).
+- Cultural Nuances: Reflect diversity in names (e.g., Hindu, Muslim, Sikh), regional references (e.g., "Kolkata" vs.
+"Chennai"), and colloquialisms (e.g., "bhai", "ji").
+- Avoid Overloading: Include 3-8 instances of unnormalized data, depending on length, to maintain readability and
+realism.
+Output Format
+- Provide the generated text only, without additional commentary, headings, or formatting beyond what is natural for the
+{document_type} (e.g., line breaks for paragraphs, bullet points for a list-style post if appropriate).
+- Ensure the text is ready to be used as-is for training purposes.
+Here are the Input Parameters with which you must generate the text:
+-Category: <category>
+- Subcategory: <subcategory>
+- Document Type: <document_type>
+- Target Length: <target_length>
+- Tone: <tone>
+**Please generate the text below:**
