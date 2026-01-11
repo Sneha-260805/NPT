@@ -101,6 +101,22 @@ Word Error Rate (WER), BLEU, ChrF++, and token-level Precision/Recall/F1—see
 > Table 3 of the report shows our unified model **outperforms the Sarvam Transliteration baseline on every one of the eight overlapping languages**, while also extending coverage from 8 to 22 languages. :contentReference[oaicite:0]{index=0}
 
 
+## 📑 Technical report (NLP_PROJECT.pdf)
+
+A self-contained write-up of the architecture, data pipeline, and experimental
+setup lives in **[`NLP_PROJECT.pdf`](./NLP_PROJECT.pdf)** (same as the slide deck
+but with expanded methodology and appendix).
+
+* **Sections 1-4** – motivation, related work, corpora summary  
+* **Section 5** – model architecture & training regime  
+* **Section 6** – evaluation protocol (task-specific metrics)  
+* **Appendix A** – prompt templates and synthetic-data workflow
+
+> **Normalization & punctuation results — work in progress**  
+> We have already benchmarked **transliteration**, which beats Sarvam across all
+> eight overlapping languages (see Table 3). Final numbers for the
+> **normalization** and **punctuation restoration** tasks are being computed and
+> will be added to both the PDF and README as soon as the runs finish.
 
 
 
