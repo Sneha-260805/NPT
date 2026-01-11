@@ -14,7 +14,7 @@ NPT is a single **Gemma‑3 B** decoder‑only Transformer fine‑tuned to per
 | **Transliteration (to Latin)** | `Transliterate:` | `ध्यान` ➜ `dhyaan` |
 | **Punctuation restoration** | `Punctuate:` | `lets eat grandma` ➜ `Let's eat, grandma.` |
 
-It supports **12 scripts** (Devanagari, Tamil, Telugu, …) and **23 languages**, letting you clean noisy chat logs, OCR output, or ASR transcripts with one checkpoint.
+It supports **12 scripts** (Devanagari, Tamil, Telugu, …) for normalization, **23 languages** for punctuation restoration and **22 languages** for transliteration, letting you clean noisy chat logs, OCR output, or ASR transcripts with one checkpoint.
 
 ---
 
@@ -43,8 +43,15 @@ NPT/
 
 ## 📚 Dataset recipe (in brief)
 
-1. **Public corpora** — Wiki Headlines, UD Treebanks, CFILT Indic-X.  
-2. **Synthetic boost** — Gemini‑2.0‑Flash prompts in `System_prompts/normalization_synthetic_data.txt` generate *unnormalised ↔ normalised* pairs for low‑resource languages.  
+1. 1. **Public corpora**
+
+   - **IndicCorp V2** — large monolingual dump covering 23 Indic languages.  
+   - **BPCC (Bharat Parallel Corpus Collection)** — sentence-aligned parallel data for every scheduled Indian language.  
+   - **IndicLLMSuite / IndicAlign** — high-quality transliteration triples used as gold supervision.  
+   - **Mark-My-Words** — multilingual punctuation-restoration corpus.  
+   - **Updesh-Beta** — multilingual question-answering & reasoning dataset used for robustness evaluation.
+
+2. **Synthetic boost** — Gemini‑2.5‑Flash prompts in `System_prompts/normalization_synthetic_data.txt` generate *unnormalised ↔ normalised* pairs for low‑resource languages.  
 3. **Merge utility** — (spec in `System_prompts/merge`) aligns parallel `.jsonl` trees into a single training file with `{task, unnormalised, normalised}` lines.
 
 ---
@@ -61,25 +68,19 @@ pip install -r requirements.txt                          # torch 2.2+, transform
 ```
 
 
-### 3. Run inference
+### 2. **Run the interactive demo (recommended)**
 
-```bash
-python scripts/inference.py   --checkpoint checkpoints/npt   --task normalization   --text "pls send 5lakh by 5pm"
-```
+Open **`Demo (2).ipynb`** locally (Jupyter Lab / VS Code) or in Google Colab:
 
-Or open **`Demo (2).ipynb`** and try the three tasks interactively.
+1. **Load the checkpoint** – execute the first cell to mount (or download) `checkpoints/npt`.
+2. **Pick a task keyword** – choose **`Normalise:`**, **`Transliterate:`**, or **`Punctuate:`** in the prompt cell.
+3. **Run the examples** – watch the model clean up the sample sentences.
+4. **Experiment** – paste your own text, adjust decoding parameters, and see live results.
 
----
+> **Why start here?** The notebook shows all three tasks side-by-side, prints metrics, and lets you iterate without memorising CLI flags.
 
-## 📊 Results (test‑set)
 
-| Task | Metric | Score |
-|------|--------|-------|
-| Transliteration | Character Error Rate ↓ | **2.1 %** |
-| Normalisation   | Slot‑level Exact Match ↑ | **93.4 %** |
-| Punctuation     | F1 ↑ | **91.7 %** |
 
-*(Macro‑averaged over 23 languages; full table in the PDF.)*
 
 
 
