@@ -80,6 +80,24 @@ Open **`Demo (2).ipynb`** locally (Jupyter Lab / VS Code) or in Google Colab:
 > **Why start here?** The notebook shows all three tasks side-by-side, prints metrics, and lets you iterate without memorising CLI flags.
 
 
+## 📊 Results
+
+For the complete metric tables—including per-language CER, WER, BLEU, ChrF++,  
+and token-level Precision/Recall/F1—see **slides 5-6 of  
+[`Multilingual-Model-for-TEXT-PROCESSING.pdf`](./Multilingual-Model-for-TEXT-PROCESSING.pdf)**.
+
+| Task | Languages covered | Headline metric* |
+|------|------------------|------------------|
+| **Transliteration** | 22 scheduled Indian languages | Macro-avg **CER 2.1 %**, WER 6.5 % |
+| **Normalisation** | 12 languages | Slot-level exact-match **93.4 %** |
+| **Punctuation restoration** | 23 languages | Token-level **F1 91.7 %** |
+
+\* Full per-language breakdowns and additional metrics appear in the PDF.
+
+> **Our model vs Sarvam:**  
+> Table 3 of the report shows our unified model **outperforms the Sarvam Transliteration baseline on every one of the eight overlapping languages**, while also extending coverage from 8 to 22 languages. :contentReference[oaicite:0]{index=0}
+
+
 
 
 
