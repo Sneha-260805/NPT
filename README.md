@@ -104,7 +104,7 @@ Word Error Rate (WER), BLEU, ChrF++, and token-level Precision/Recall/F1—see
 ## 📑 Technical report (NLP_PROJECT.pdf)
 
 A self-contained write-up of the architecture, data pipeline, and experimental
-setup lives in **[`NLP_PROJECT.pdf`](./NLP_PROJECT.pdf)** (same as the slide deck
+setup lives in **[`NLP_PROJECT.pdf`](./NLP_PROJECT(2).pdf)** (same as the slide deck
 but with expanded methodology and appendix).
 
 * **Sections 1-4** – motivation, related work, corpora summary  
