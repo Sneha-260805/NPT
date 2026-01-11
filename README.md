@@ -10,7 +10,7 @@ NPT is a single **Gemma‑3 B** decoder‑only Transformer fine‑tuned to per
 
 | Task | Prompt keyword | Example (input ➜ output) |
 |------|----------------|--------------------------|
-| **Normalisation** | `Normalise:` | `pls send 5lakh by 5pm` ➜ `Please send ₹ 500 000 by 17:00.` |
+| **Normalisation** | `Normalise:` | `Report suggests 3.14 million packages delayed, a rise of 2 lakh.` ➜ `Report suggests three point one four million packages delayed a rise of two lakh.` |
 | **Transliteration (to Latin)** | `Transliterate:` | `ध्यान` ➜ `dhyaan` |
 | **Punctuation restoration** | `Punctuate:` | `lets eat grandma` ➜ `Let's eat, grandma.` |
 
