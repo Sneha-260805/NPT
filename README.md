@@ -53,7 +53,7 @@ NPT/
    - **Mark-My-Words** — multilingual punctuation-restoration corpus.  
    - **Updesh-Beta** — multilingual question-answering & reasoning dataset used for robustness evaluation.
 
-2. **Synthetic boost** — Gemini‑2.5‑Flash prompts in `System_prompts/normalization_synthetic_data.txt` generate *unnormalised ↔ normalised* pairs for low‑resource languages.  
+2. **Synthetic boost** —We used Gemini 2.0 Flash to translate unnormalised and normalised data to the respective scheduled languages to create a high curated dataset.
 3. **Merge utility** — (spec in `System_prompts/merge`) aligns parallel `.jsonl` trees into a single training file with `{task, unnormalised, normalised}` lines.
 
 ---
