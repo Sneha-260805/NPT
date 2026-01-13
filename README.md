@@ -14,7 +14,7 @@ NPT is a single **Gemma‑3 B** decoder‑only Transformer fine‑tuned to per
 | **Transliteration (to Latin)** | `Transliterate:` | `ध्यान` ➜ `dhyaan` |
 | **Punctuation restoration** | `Punctuate:` | `lets eat grandma` ➜ `Let's eat, grandma.` |
 
-It supports **12 scripts** (Devanagari, Tamil, Telugu, …) for normalization, **23 languages** for punctuation restoration and **22 languages** for transliteration, letting you clean noisy chat logs, OCR output, or ASR transcripts with one checkpoint.
+It supports **12 scripts** (Tamil, Telugu, …) for normalization, **23 languages** for punctuation restoration and **22 languages** for transliteration, letting you clean noisy chat logs, OCR output, or ASR transcripts with one checkpoint.
 
 ---
 
@@ -32,10 +32,12 @@ A detailed motivation, dataset description, and evaluation can be found in `Mult
 
 ```
 NPT/
-├─ scripts/              # train.py, inference.py, utils
-├─ System_prompts/       # LLM prompt templates for data generation
-├─ checkpoints/          # (ignored) fine-tuned weights land here
-├─ Demo.ipynb            # Colab / Jupyter demo
+├─ System_prompts/              # train.py, inference.py, utils
+├─ Scripts/       # LLM prompt templates for data generation
+├─ Demo (2).ipynb           # Colab / Jupyter demo
+├─ Multilingual-Model-for-Text-PROCESSING.pdf   # Presentation of this project
+├─ NLP_PROJECT (2).pdf # Detailed Report
+├─ Requirements.txt      
 └─ README.md             # you are here
 ```
 
